@@ -10,3 +10,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: Setup Debug Session
         uses: csexton/debugger-action@master
+      - name: Git clone WasmEdge
+        run: |
+          brew install llvm@14 ninja boost cmake openssl@1.1
+          export LLVM_DIR="/usr/local/opt/llvm@14/lib/cmake"
+          export CC=clang
+          export CXX=clang++
+          mkdir -p build
+          cd build
+          git clone https://github.com/spencergotowork/WasmEdge-1.git
