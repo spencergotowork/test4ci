@@ -8,8 +8,6 @@ jobs:
     runs-on: macos-11
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Debug Session
-        uses: csexton/debugger-action@master
       - name: Git clone WasmEdge
         run: |
           brew install llvm@14 ninja boost cmake openssl@1.1
@@ -19,3 +17,6 @@ jobs:
           mkdir -p build
           cd build
           git clone https://github.com/spencergotowork/WasmEdge-1.git
+      - name: Setup Debug Session
+        uses: csexton/debugger-action@master
+      
