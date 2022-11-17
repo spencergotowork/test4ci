@@ -17,6 +17,7 @@ jobs:
           mkdir -p build
           cd build
           git clone https://github.com/spencergotowork/WasmEdge-1.git
+          echo 'hello'
       - name: Setup Debug Session
         uses: csexton/debugger-action@master
       
